@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import random
 
 # Create your views here.
 
@@ -11,8 +12,4 @@ def home(request):
         "It works on my machine",
     ]
 
-    output = ''
-    for excuse in excuses:
-        output += excuse + '<br>'
-
-    return HttpResponse(output)
+    return HttpResponse(random.choice(excuses))
