@@ -11,4 +11,8 @@ def home(request):
         "It works on my machine",
     ]
 
-    return HttpResponse(excuses[0])
+    output = ''
+    for excuse in excuses:
+        output += excuse + '<br>'
+
+    return HttpResponse(output)
